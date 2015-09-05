@@ -141,17 +141,34 @@
               </div>
               <div class="grid_4">
                 <h2>News & Events</h2>
-                <p> What is Impulse doing & When?</p>
+                
+                <p> What is Impulse doing & When? </p>
                 <ul class="marked-list">
-                  <li><a href="#">Lorem ipsum dolor sit amet </a></li>
-                  <li><a href="#">Conse ctetur adipisicing</a></li>
-                  <li><a href="#">Elit sed do eiusmod tempor</a></li>
-                  <li><a href="#">Incididunt ut labore</a></li>
-                  <li><a href="#">Et dolore magna aliqua</a></li>
-                  <li><a href="#">Ut enim ad minim veniam</a></li>
-                  <li><a href="#">Quis nostrud exercitation</a></li>
-                  <li><a href="#">Incididunt ut labore</a></li>
-                  <li><a href="#">Et dolore magna aliqua</a></li>
+                <?php
+                $servername = "localhost";
+                $username = "root";
+                $password = "";
+                $myDB = "impulse";
+                try {
+                	$conn = new PDO("mysql:host=$servername;dbname=$myDB", $username, $password);
+                	// set the PDO error mode to exeception
+                	$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                	//echo "Connected successfully";
+                	$stmt = $conn->prepare("SELECT text FROM newsandevents");
+                	$stmt->execute();
+                	//
+                	$result = $stmt->fetchAll(PDO::FETCH_ASSOC);
+                	//print_r($result);
+                	foreach ($result as $text){
+                		foreach ($text as $msg) {
+                			echo "<li><a href=\"#\">".$msg."</a></li>";
+                		}
+                	}
+                }
+                catch (PDOExeception $e) {
+                	echo "Connection failed: " . $e->getMessage();
+                }
+                ?>
                 </ul><a href="#" class="btn">Read more</a>
               </div>
               <div class="grid_4">
