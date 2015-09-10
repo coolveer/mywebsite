@@ -26,11 +26,11 @@
       
       
       -->
-      <header>
+    <header>
         <div class="container">
           <div class="brand">
             <h1 class="brand_name"><a href="./">Impulse</a></h1>
-            <p class="brand_slogan">Pvt. Ltd.</p>
+           <p class="brand_slogan">Pvt. Ltd.</p>
           </div><a href="callto:#" class="fa-phone">+977 9816-766-984</a>
           <p>One of our representatives will happily contact you within 24 hours. For urgent needs call us at</p>
         </div>
@@ -38,13 +38,13 @@
           <div class="container">
             <nav class="nav">
               <ul data-type="navbar" class="sf-menu">
-                <li><a href="./">Home</a>
+                <li ><a href="./">Home</a>
                 </li>
                 <li><a href="about.html">About</a>
                 </li>
                 <li><a href="services.html">Services</a>
                 </li>
-                <li><a href="blogs.php">Blogs</a>
+                <li><a href="blogs.html">Blogs</a>
                 </li>
                 <li class="active"><a href="contacts.html">Contacts</a>
                 </li>
@@ -52,7 +52,7 @@
             </nav>
           </div>
         </div>
-      </header>
+      </header>
       <!--
       ========================================================
                                   CONTENT
@@ -66,6 +66,31 @@
               <p>9870 St Vincent Place, Glasgow, DC 45 Fr 45. <span>800 2345-6789</span></p>
             </li>
           </ul>
+        </section>
+    <section class="well1">
+          <div class="container">
+            <h2>Feedback</h2>
+            <form method="post" action="bat/rd-mailform.php" class="mailform off2">
+              <input type="hidden" name="form-type" value="contact">
+              <fieldset class="row">
+                <label class="grid_4">
+                  <input type="text" name="name" placeholder="Your Name:" data-constraints="@LettersOnly @NotEmpty">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="phone" placeholder="Telephone:" data-constraints="@Phone">
+                </label>
+                <label class="grid_4">
+                  <input type="text" name="email" placeholder="Email:" data-constraints="@Email @NotEmpty">
+                </label>
+                <label class="grid_12">
+                  <textarea name="message" placeholder="Message:" data-constraints="@NotEmpty"></textarea>
+                </label>
+                <div class="mfControls grid_12">
+                  <button type="submit" class="btn">Sumbit comment</button>
+                </div>
+              </fieldset>
+            </form>
+          </div>
         </section>
         <section class="well3 bg-secondary">
           <div class="container">
@@ -117,31 +142,7 @@
             </ul>
           </div>
         </section>
-        <section class="well1">
-          <div class="container">
-            <h2>Feedback</h2>
-            <form method="post" action="bat/rd-mailform.php" class="mailform off2">
-              <input type="hidden" name="form-type" value="contact">
-              <fieldset class="row">
-                <label class="grid_4">
-                  <input type="text" name="name" placeholder="Your Name:" data-constraints="@LettersOnly @NotEmpty">
-                </label>
-                <label class="grid_4">
-                  <input type="text" name="phone" placeholder="Telephone:" data-constraints="@Phone">
-                </label>
-                <label class="grid_4">
-                  <input type="text" name="email" placeholder="Email:" data-constraints="@Email @NotEmpty">
-                </label>
-                <label class="grid_12">
-                  <textarea name="message" placeholder="Message:" data-constraints="@NotEmpty"></textarea>
-                </label>
-                <div class="mfControls grid_12">
-                  <button type="submit" class="btn">Sumbit comment</button>
-                </div>
-              </fieldset>
-            </form>
-          </div>
-        </section>
+    
       </main>
       <!--
       ========================================================
