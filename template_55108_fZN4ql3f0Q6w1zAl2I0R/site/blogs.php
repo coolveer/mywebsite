@@ -8,7 +8,7 @@
         // set the PDO error mode to exeception
         $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         //echo "Connected successfully";
-        $stmt = $conn->prepare("SELECT topic,content FROM blog");
+        $stmt = $conn->prepare("SELECT topic,content,author FROM blog");
         $stmt->execute();
         //
         $result = $stmt->fetchAll(PDO::FETCH_ASSOC);
@@ -17,9 +17,15 @@
         	$data = (Array)$text;
         	//echo "<h3 class=\"primary\">".$data['topic']."</h3><p>".$data['content']."</p><hr>";
         	
-        	echo  "<h3 class=\"entry-header\"> <a href=\"#\">".$data['topic']."</a> </h3> <div class=\"entry-content\">
-			<div class=\"entry-body\">".$data['content']."</div></div><div class=\"entry-footer\"><p class=\"entry-footer-info\">
-			Posted by <a href=\"#\">Mr. Saurabh Pokhrel</a> on September 08, 2015 </p> </div>";
+        	echo  "<h3 class=\"entry-header\"> <a href=\"#\">".$data['topic']."</a> </h3> 
+			
+			<div class=\"entry-content\">
+				<div class=\"entry-body\">".$data['content']."</div>
+			</div>
+			<div class=\"entry-footer\">
+				<p class=\"entry-footer-info\">
+			Posted by <a href=\"#\">".$data['author']."</a> on September 08, 2015 </p>
+			 </div>";
         	        	
         	}
         }
